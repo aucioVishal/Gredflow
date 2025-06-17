@@ -91,7 +91,7 @@ export default function AboutPageClient() {
                 )}
                 style={{ animationDelay: "0.1s" }}
               >
-                We're a passionate team of designers dedicated to creating impactful visual experiences that help brands
+                We're t passionate team of designers dedicated to creating impactful visual experiences that help brands
                 connect with their audiences and achieve their business goals.
               </p>
               <div
