@@ -98,7 +98,7 @@ const projects = [
     image: "/images/hoppy-brews.png",
     client: "Hoppy Brews",
     description:
-      "Creative label designs for a craft brewery's product line, each reflecting the unique character of different beer varieties.",
+      "Creative label designs for t craft brewery's product line, each reflecting the unique character of different beer varieties.",
   },
 ]
 
