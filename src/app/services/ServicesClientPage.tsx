@@ -205,7 +205,7 @@ export default function ServicesClientPage() {
                 )}
                 style={{ animationDelay: "0.1s" }}
               >
-                We offer a comprehensive range of design services to help your brand stand out in today's competitive
+                We offer a comprehensive range of design services to help your brand stand out in today&apos;s competitive
                 market.
               </p>
               <div
@@ -375,9 +375,9 @@ export default function ServicesClientPage() {
       </section>
 
       {/* Pricing Section */}
-      <section ref={pricingRef} className="py-16 md:py-24 bg-[#F1F9F1] w-full mx-auto">
-        <div className="container px-4 md:px-6 w-full mx-auto">
-          <div className="flex flex-col items-center text-center mb-12">
+      <section ref={pricingRef} className="py-20 md:py-32 bg-[#F1F9F1] w-full mx-auto">
+        <div className="container px-6 md:px-8 w-full mx-auto">
+          <div className="flex flex-col items-center text-center mb-16">
             <h2
               className={cn(
                 "text-3xl font-bold tracking-tighter md:text-4xl",
@@ -388,7 +388,7 @@ export default function ServicesClientPage() {
             </h2>
             <div
               className={cn(
-                "w-20 h-1 bg-[#4CAF50] my-4",
+                "w-20 h-1 bg-[#4CAF50] my-6",
                 pricingInView ? "animate-fade-in-up" : "opacity-0 translate-y-4",
               )}
               style={{ animationDelay: "0.1s" }}
@@ -404,7 +404,7 @@ export default function ServicesClientPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
             {[
               {
                 name: "Basic",
@@ -454,35 +454,35 @@ export default function ServicesClientPage() {
                 key={index}
                 className={cn(
                   `${plan.highlighted ? "border-[#4CAF50] shadow-lg relative" : "border-[#D4ECD5]"}`,
-                  "group hover:scale-[1.02] hover:shadow-xl transition-all duration-300 ease-out",
+                  "group hover:scale-[1.02] hover:shadow-xl transition-all duration-300 ease-out min-h-[600px]",
                   pricingInView ? "animate-zoom-in-fade-up" : "opacity-0 translate-y-4 scale-95",
                 )}
                 style={{ animationDelay: pricingInView ? `${index * 0.1 + 0.3}s` : "0s" }}
               >
                 {plan.highlighted && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#4CAF50] text-white px-4 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#4CAF50] text-white px-6 py-2 rounded-full text-sm font-medium">
                     Most Popular
                   </div>
                 )}
-                <CardHeader>
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                  <CardDescription>{plan.description}</CardDescription>
-                  <div className="mt-4">
+                <CardHeader className="p-8 pb-6">
+                  <CardTitle className="text-2xl mb-3">{plan.name}</CardTitle>
+                  <CardDescription className="text-base mb-6">{plan.description}</CardDescription>
+                  <div className="mt-6">
                     <span className="text-4xl font-bold">{plan.price}</span>
                     <span className="text-[#333333]/70 ml-2">/ project</span>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
+                <CardContent className="p-8 pt-0 flex flex-col flex-1">
+                  <ul className="space-y-4 mb-8 flex-1">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-[#4CAF50] mr-2 mt-0.5 shrink-0" />
-                        <span>{feature}</span>
+                        <CheckCircle className="h-5 w-5 text-[#4CAF50] mr-3 mt-0.5 shrink-0" />
+                        <span className="text-[#333333]/90">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button
-                    className={`w-full mt-6 ${
+                    className={`w-full py-3 text-base font-medium ${
                       plan.highlighted
                         ? "bg-[#4CAF50] hover:bg-[#4CAF50]/90 text-white"
                         : "bg-white border border-[#4CAF50] text-[#4CAF50] hover:bg-[#4CAF50]/10"
@@ -496,13 +496,13 @@ export default function ServicesClientPage() {
           </div>
 
           <div
-            className={cn("mt-12 text-center", pricingInView ? "animate-fade-in-up" : "opacity-0 translate-y-4")}
+            className={cn("mt-16 text-center", pricingInView ? "animate-fade-in-up" : "opacity-0 translate-y-4")}
             style={{ animationDelay: pricingInView ? `${3 * 0.1 + 0.4}s` : "0s" }}
           >
-            <p className="text-[#333333]/80 mb-4">
+            <p className="text-[#333333]/80 mb-6 text-lg">
               Need a custom solution? We offer tailored packages to meet your specific needs.
             </p>
-            <Button variant="outline" className="border-[#4CAF50] text-[#4CAF50] hover:bg-[#4CAF50]/10">
+            <Button variant="outline" className="border-[#4CAF50] text-[#4CAF50] hover:bg-[#4CAF50]/10 px-8 py-3 text-base">
               Contact for Custom Quote
             </Button>
           </div>

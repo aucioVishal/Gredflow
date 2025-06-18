@@ -91,7 +91,7 @@ export default function AboutPageClient() {
                 )}
                 style={{ animationDelay: "0.1s" }}
               >
-                We're a passionate team of designers dedicated to creating impactful visual experiences that help brands
+                We&apos;re a passionate team of designers dedicated to creating impactful visual experiences that help brands
                 connect with their audiences and achieve their business goals.
               </p>
               <div
@@ -114,7 +114,6 @@ export default function AboutPageClient() {
               <ParallaxImage
                 src="/images/about.png"
                 alt="GredFlow Team"
-                fill
                 className="h-[400px] w-full rounded-lg shadow-lg " 
                 speed={0.05}
                 style={{ objectFit: 'cover' }}
@@ -155,7 +154,6 @@ export default function AboutPageClient() {
               <ParallaxImage
                 src="/images/our-story.jpeg"
                 alt="GredFlow Studio"
-                fill
                 className="h-[400px] w-full rounded-lg shadow-lg"
                 speed={0.08}
                 style={{ objectFit: 'cover' }}
@@ -191,7 +189,7 @@ export default function AboutPageClient() {
                 style={{ animationDelay: "0.6s" }}
               >
                 Today, GredFlow has grown into a team of 15 talented designers, strategists, and project managers, all
-                united by a shared passion for exceptional design and client success. We've worked with over 100 clients
+                united by a shared passion for exceptional design and client success. We&apos;ve worked with over 100 clients
                 across various industries, helping them stand out in increasingly competitive markets.
               </p>
             </div>

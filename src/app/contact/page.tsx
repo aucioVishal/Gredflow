@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Phone, Mail, Clock, MessageSquare } from "lucide-react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contact Us | GredFlow",
@@ -20,7 +21,7 @@ export default function ContactPage() {
               Get in <span className="text-[#4CAF50]">Touch</span>
             </h1>
             <p className="text-lg text-[#333333]/80 max-w-[800px]">
-              Have a project in mind or want to learn more about our services? We'd love to hear from you.
+              Have a project in mind or want to learn more about our services? We&apos;d love to hear from you.
             </p>
           </div>
         </div>
@@ -171,55 +172,71 @@ export default function ContactPage() {
               Find answers to common questions about our services and process.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:gap-12">
-            {[
-              {
-                question: "What is your typical project timeline?",
-                answer:
-                  "Project timelines vary depending on scope and complexity. A basic logo design might take 1-2 weeks, while a comprehensive brand identity could take 4-6 weeks. We'll provide a detailed timeline during our initial consultation.",
-              },
-              {
-                question: "How does your design process work?",
-                answer:
-                  "Our design process typically includes discovery, concept development, design refinement, and finalization. We maintain open communication throughout and provide regular updates to ensure your vision is being realized.",
-              },
-              {
-                question: "Do you offer revisions to your designs?",
-                answer:
-                  "Yes, all our design packages include revision rounds. The number of revisions depends on the package you choose. We work closely with you to ensure you're completely satisfied with the final result.",
-              },
-              {
-                question: "What information do you need to start a project?",
-                answer:
-                  "To get started, we need to understand your brand, target audience, project goals, and any design preferences. We'll provide a detailed questionnaire and schedule a kickoff meeting to gather all necessary information.",
-              },
-              {
-                question: "Do you offer ongoing design support?",
-                answer:
-                  "Yes, we offer retainer packages for clients who need ongoing design support. These packages can be customized based on your specific needs and frequency of design work required.",
-              },
-              {
-                question: "What are your payment terms?",
-                answer:
-                  "We typically require a 50% deposit to begin work, with the remaining balance due upon project completion. For larger projects, we may establish a payment schedule with milestones. We accept credit cards, bank transfers, and PayPal.",
-              },
-            ].map((faq, index) => (
-              <Card key={index} className="border border-[#D4ECD5]">
-                <CardContent className="p-6">
-                  <div className="flex items-start">
-                    <MessageSquare className="h-6 w-6 text-[#4CAF50] mr-4 mt-1" />
-                    <div>
-                      <h3 className="font-semibold mb-2">{faq.question}</h3>
-                      <p className="text-[#333333]/80">{faq.answer}</p>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              {[
+                {
+                  question: "What is your typical project timeline?",
+                  answer:
+                    "Project timelines vary depending on scope and complexity. A basic logo design might take 1-2 weeks, while a comprehensive brand identity could take 4-6 weeks. We'll provide a detailed timeline during our initial consultation.",
+                  icon: "⏱️",
+                },
+                {
+                  question: "How does your design process work?",
+                  answer:
+                    "Our design process typically includes discovery, concept development, design refinement, and finalization. We maintain open communication throughout and provide regular updates to ensure your vision is being realized.",
+                  icon: "🎨",
+                },
+                {
+                  question: "Do you offer revisions to your designs?",
+                  answer:
+                    "Yes, all our design packages include revision rounds. The number of revisions depends on the package you choose. We work closely with you to ensure you're completely satisfied with the final result.",
+                  icon: "✨",
+                },
+                {
+                  question: "What information do you need to start a project?",
+                  answer:
+                    "To get started, we need to understand your brand, target audience, project goals, and any design preferences. We'll provide a detailed questionnaire and schedule a kickoff meeting to gather all necessary information.",
+                  icon: "📋",
+                },
+                {
+                  question: "Do you offer ongoing design support?",
+                  answer:
+                    "Yes, we offer retainer packages for clients who need ongoing design support. These packages can be customized based on your specific needs and frequency of design work required.",
+                  icon: "🤝",
+                },
+                {
+                  question: "What are your payment terms?",
+                  answer:
+                    "We typically require a 50% deposit to begin work, with the remaining balance due upon project completion. For larger projects, we may establish a payment schedule with milestones. We accept credit cards, bank transfers, and PayPal.",
+                  icon: "💳",
+                },
+              ].map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border border-[#D4ECD5] rounded-lg mb-4 hover:border-[#4CAF50] transition-colors duration-300">
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline group">
+                    <div className="flex items-center text-left">
+                      <span className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                        {faq.icon}
+                      </span>
+                      <span className="font-semibold text-lg group-hover:text-[#4CAF50] transition-colors duration-300">
+                        {faq.question}
+                      </span>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-4">
+                    <div className="ml-12">
+                      <p className="text-[#333333]/80 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
           <div className="mt-12 text-center">
-            <p className="text-[#333333]/80 mb-4">Still have questions? We're here to help!</p>
-            <Button className="bg-[#4CAF50] hover:bg-[#4CAF50]/90 text-white">Contact Us</Button>
+            <p className="text-[#333333]/80 mb-6 text-lg">Still have questions? We&apos;re here to help!</p>
+            <Button className="bg-[#4CAF50] hover:bg-[#4CAF50]/90 text-white px-8 py-3 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300">
+              Contact Us
+            </Button>
           </div>
         </div>
       </section>

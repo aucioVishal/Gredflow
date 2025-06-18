@@ -184,7 +184,7 @@ export default function PortfolioClientPage() {
                 )}
                 style={{ animationDelay: "0.1s" }}
               >
-                Showcasing our passion for design and the impactful visual stories we've crafted for diverse brands.
+                Showcasing our passion for design and the impactful visual stories we&apos;ve crafted for diverse brands.
               </p>
               <div
                 className={cn(
@@ -298,7 +298,7 @@ export default function PortfolioClientPage() {
               )}
               style={{ animationDelay: "0.1s" }}
             >
-              Let's collaborate to create visually compelling designs that help your brand stand out and connect with
+              Let&apos;s collaborate to create visually compelling designs that help your brand stand out and connect with
               your audience.
             </p>
             <div

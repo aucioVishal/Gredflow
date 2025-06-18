@@ -11,6 +11,7 @@ export function ServicesSection() {
   const [isInView, setIsInView] = useState(false)
 
   useEffect(() => {
+    const currentSectionRef = sectionRef.current
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !isInView) {
@@ -25,13 +26,13 @@ export function ServicesSection() {
       },
     )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef)
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef)
       }
     }
   }, [isInView])
@@ -56,7 +57,7 @@ export function ServicesSection() {
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl mb-4">Our Creative Services</h2>
           <div className="w-20 h-1 bg-[#4CAF50] my-2"></div>
           <p className="text-lg text-[#333333]/80 max-w-[800px] mt-4">
-            We offer a comprehensive range of design services to help your brand stand out in today's competitive
+            We offer a comprehensive range of design services to help your brand stand out in today&apos;s competitive
             market. Each service is tailored to meet your specific needs and goals.
           </p>
         </div>

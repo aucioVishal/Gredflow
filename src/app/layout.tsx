@@ -1,10 +1,10 @@
 import type React from "react"
 import "@/app/globals.css"
 import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { FloatingContactButtons } from "@/components/floating-contact-buttons" // Import the new component
+import { Toaster } from "@/components/ui/toaster"
 import type { Metadata } from "next"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -49,14 +49,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen bg-[#F1F9F1] text-[#333333]`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
           <div className="flex min-h-screen flex-col w-full mx-auto">
             <Navbar />
             <main className="flex-1 w-full mx-auto">{children}</main>
             <Footer />
             <FloatingContactButtons />
+            <Toaster />
           </div>
-        </ThemeProvider>
       </body>
     </html>
   )
