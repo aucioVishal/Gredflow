@@ -59,6 +59,7 @@ export function PortfolioSection() {
   const [activeTab, setActiveTab] = useState("all")
 
   useEffect(() => {
+    const currentSectionRef = sectionRef.current
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !isInView) {
@@ -73,13 +74,13 @@ export function PortfolioSection() {
       },
     )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef)
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef)
       }
     }
   }, [isInView])
@@ -109,7 +110,7 @@ export function PortfolioSection() {
             )}
             style={{ animationDelay: "0.2s" }}
           >
-            Explore our latest projects and see how we've helped brands achieve their design goals.
+            Explore our latest projects and see how we&apos;ve helped brands achieve their design goals.
           </p>
         </div>
 

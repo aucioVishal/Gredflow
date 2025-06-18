@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { ChevronRight, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import type { Service } from "@/lib/services-data"
+import type { Service } from "@/lib/services-data.tsx"
 
 interface ServiceCardProps {
   service: Service

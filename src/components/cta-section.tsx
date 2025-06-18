@@ -11,7 +11,7 @@ export function CtaSection() {
               Ready to Elevate Your Brand with Stunning Design?
             </h2>
             <p className="text-lg text-[#333333]/80 mb-6">
-              Let's collaborate to create visually compelling designs that help your brand stand out and connect with
+              Let&apos;s collaborate to create visually compelling designs that help your brand stand out and connect with
               your audience.
             </p>
             <ul className="space-y-3 mb-8">

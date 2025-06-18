@@ -18,7 +18,7 @@ export const services: Service[] = [
     icon: <Palette className="h-10 w-10" />,
     featured: true,
     longDescription:
-      "We develop comprehensive brand identities that capture your company's essence and connect with your target audience. From logo design to brand guidelines, we ensure consistency across all touchpoints.",
+      "We develop comprehensive brand identities that capture your company&apos;s essence and connect with your target audience. From logo design to brand guidelines, we ensure consistency across all touchpoints.",
     benefits: [
       "Logo Design & Development",
       "Brand Guidelines",

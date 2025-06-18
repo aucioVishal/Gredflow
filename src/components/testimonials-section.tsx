@@ -13,7 +13,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "Marketing Director, TechCorp",
     content:
-      "GredFlow completely transformed our brand identity. Their creative approach and attention to detail exceeded our expectations. We've received countless compliments on our new look!",
+      "GredFlow completely transformed our brand identity. Their creative approach and attention to detail exceeded our expectations. We&apos;ve received countless compliments on our new look!",
     avatar: "/placeholder.svg?height=100&width=100",
     rating: 5,
   },
@@ -90,6 +90,7 @@ export function TestimonialsSection() {
   const [itemsPerPage, setItemsPerPage] = useState(3) // Default for large screens
 
   useEffect(() => {
+    const currentSectionRef = sectionRef.current
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !isInView) {
@@ -104,13 +105,13 @@ export function TestimonialsSection() {
       },
     )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef)
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef)
       }
     }
   }, [isInView])
@@ -165,12 +166,12 @@ export function TestimonialsSection() {
             )}
             style={{ animationDelay: "0.2s" }}
           >
-            Don't just take our word for it. Here's what our clients have to say about working with GredFlow.
+            Don&apos;t just take our word for it. Here&apos;s what our clients have to say about working with GredFlow.
           </p>
         </div>
 
         <div className="relative">
-          <div className="overflow-hidden">
+          <div className="">
             <div
               ref={carouselRef}
               className="flex transition-transform duration-500 ease-in-out"
